@@ -218,10 +218,18 @@ async function renderCharRankList ({ e, uids, char, mode, groupId }) {
         try {
           if (userInfo?.qq && e?.group?.pickMember) {
             let member = e.group.pickMember(userInfo.qq)
+            tmp.nickname = member.NickName
+            tmp.bot = member.bot.version.id
             if (member?.getAvatarUrl) {
               let img = await member.getAvatarUrl()
               if (img) {
                 tmp.qqFace = img
+              }
+              if(tmp.bot === 'WeChat'){
+                if(member?.downloadAvatar){
+                  const filename = await member.downloadAvatar();
+                  tmp.qqFace = filename
+                }
               }
             }
           }

@@ -5,13 +5,13 @@
 {{if game==='sr'}}
 <style>
 body .container {
-  width: 900px;
+  width: 1100px;
 }
 </style>
 {{else}}
 <style>
 body .container {
-  width: 820px;
+  width: 1020px;
 }
 </style>
 {{/if}}
@@ -72,10 +72,17 @@ body .container {
     </div>
     {{/if}}
     <div class="item-icon char-icon star{{ds.star}}">
-      {{if ds.qqFace}}
+      {{if ds.qqFace }}
       <span class="img" style="background-image:url({{ds.qqFace}})"></span>
       {{else}}
       <span class="img" style="background-image:url({{_res_path}}{{ds.imgs?.face}})"></span>
+      {{/if}}
+    </div>
+    <div class="user-info">
+      {{if ds.nickname}}
+      <span class="nickname {{idx == 0?'max':''}}">{{ds.nickname}}</span>
+      {{else}}
+      <span class="nickname {{idx == 0?'max nock':'nock'}}">神秘群友</span>
       {{/if}}
     </div>
     {{if ds.isMax}}

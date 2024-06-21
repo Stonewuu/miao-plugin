@@ -4,10 +4,10 @@
   "author": "Yoimiya-Kokomi",
   "description": "miao-plugin",
   "type": "module",
-  "scripts": {
-  },
+  "scripts": {},
   "dependencies": {
-    "image-size": "^1.0.2"
+    "image-size": "^1.0.2",
+    "less": "^4.2.0"
   },
   "devDependencies": {
     "cheerio": "1.0.0-rc.12",
