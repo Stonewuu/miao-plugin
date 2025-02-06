@@ -87,8 +87,36 @@
       border-radius: 0;
     }
   }
+}
 
+.user-info{
+  //max-width: 200px;
+  width: 120px;
+  height: 50px;
+  padding: 0 10px;
+  line-height: 50px;
+  text-align: center;
+  word-break: keep-all;
+  // 不换行
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
+.user-info .nickname.nock{
+  color: #7c7c7c;
+}
+.user-info .nickname.max.nock{
+  color: gold;
+}
+
+.user-info .nickname.max{
+  color: transparent;
+  background: -webkit-linear-gradient(30deg, #32c5ff 25%, #b620e0 50%, #f7b500 75%, #20e050 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: auto;
 }
 
 .char-icon {
@@ -98,7 +126,7 @@
   border: 1px solid #fff;
   box-shadow: 1px 1px 3px 0 #000;
   overflow: visible;
-  margin: 0 5px 0 6px;
+  margin: 0 5px 20px 6px;
 
   .img {
     background-size: auto 100%;

@@ -12,7 +12,7 @@
 .group-rank-icon {
   width: 16px;
   height: 16px;
-  background: url("imgs/mark-icon.png");
+  background: url("./imgs/mark-icon.png");
   background-size: auto 100%;
   display: inline-block;
   vertical-align: bottom;
@@ -51,7 +51,7 @@
   width: 24px;
   height: 24px;
   margin: 13px 12px;
-  background: url('imgs/mark-icon.png');
+  background: url('./imgs/mark-icon.png');
   background-size: auto 100%;
   text-align: center;
   font-size: 12px;
@@ -62,7 +62,7 @@
 .char-idx .idx-icon.mode-dmg.idx-1 {
   width: 48px;
   margin: 13px 0;
-  background-image: url('imgs/mark-icon2.png');
+  background-image: url('./imgs/mark-icon2.png');
   color: rgba(0, 0, 0, 0);
   text-shadow: none;
 }
@@ -81,6 +81,31 @@
 .char-idx .char-icon .img {
   border-radius: 0;
 }
+.user-info {
+  width: 120px;
+  height: 50px;
+  padding: 0 10px;
+  line-height: 50px;
+  text-align: center;
+  word-break: keep-all;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.user-info .nickname.nock {
+  color: #7c7c7c;
+}
+.user-info .nickname.max.nock {
+  color: gold;
+}
+.user-info .nickname.max {
+  color: transparent;
+  background: -webkit-linear-gradient(30deg, #32c5ff 25%, #b620e0 50%, #f7b500 75%, #20e050 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: auto;
+}
 .char-icon {
   width: 50px;
   height: 50px;
@@ -88,7 +113,7 @@
   border: 1px solid #fff;
   box-shadow: 1px 1px 3px 0 #000;
   overflow: visible;
-  margin: 0 5px 0 6px;
+  margin: 0 5px 20px 6px;
 }
 .char-icon .img {
   background-size: auto 100%;
@@ -338,3 +363,4 @@
   font-size: 12px;
   color: #aaa;
 }
+/*# sourceMappingURL=rank-profile-list.css.map */
