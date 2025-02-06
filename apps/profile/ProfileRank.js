@@ -106,8 +106,9 @@ export async function resetRank (e) {
   let name = msg.replace(/(#|星铁|重置|重设|排名|排行|群|群内|面板|详情|面版)/g, '').trim()
   let charId = ''
   let charName = '全部角色'
+  let char 
   if (name) {
-    let char = Character.get(name, game)
+    char = Character.get(name, game)
     if (!char) {
       e.reply(`重置排名失败，角色：${name}不存在`)
       return true
@@ -277,7 +278,9 @@ async function renderCharRankList ({ e, uids, char, mode, groupId }) {
       穹·存护: '开拓者·存护',
       星·存护: '开拓者·存护',
       穹·同谐: '开拓者·同谐',
-      星·同谐: '开拓者·同谐'
+      星·同谐: '开拓者·同谐',
+      穹·记忆: '开拓者·记忆',
+      星·记忆: '开拓者·记忆'
     }
     if (titleName[char.name]) {
       title = `${e.isSr ? '*' : '#'}${titleName[char.name]}${modeTitleMap[mode]}排行`

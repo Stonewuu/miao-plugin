@@ -44,6 +44,7 @@ export default class ProfileDmg extends Base {
     let profile = this.profile
     let ret = {}
     let talentData = profile.talent || {}
+    ret.talentLevel = talentData
     let detail = char.detail
     let { isSr, isGs } = this
     lodash.forEach((isSr ? 'a,a2,e,e2,q,q2,t' : 'a,e,q').split(','), (key) => {
@@ -87,7 +88,7 @@ export default class ProfileDmg extends Base {
 
   async getCalcRule () {
     let ruleName = this.char?.name
-    if ([10000005, 10000007].includes(this.char.id * 1)) {
+    if ([10000005, 10000007, 20000000].includes(this.char.id * 1)) {
       ruleName = `旅行者/${this.profile.elem}`
     }
     const cfgPath = ProfileDmg.dmgRulePath(ruleName, this.char?.game)
@@ -111,7 +112,7 @@ export default class ProfileDmg extends Base {
     return false
   }
 
-  async calcData ({ enemyLv = 91, mode = 'profile', dmgIdx = 0, idxIsInput = false }) {
+  async calcData ({ enemyLv = 103, mode = 'profile', dmgIdx = 0, idxIsInput = false }) {
     if (!this.char || !this.profile) {
       return false
     }
@@ -128,6 +129,7 @@ export default class ProfileDmg extends Base {
     let talent = this.talent()
 
     let meta = {
+      characterName: this.char?.name,
       level: profile.level,
       cons: profile.cons * 1,
       talent,

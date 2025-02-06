@@ -181,7 +181,7 @@ export default function (step, staticStep) {
     }],
     便携动力锯: [{
       title: '满层时，元素精通提升[mastery]点',
-      data: {
+      refine: {
         mastery: step(40 * 3)
       }
     }],
@@ -195,6 +195,36 @@ export default function (step, staticStep) {
       title: '攻击力提升[atkPct]%',
       refine: {
         atkPct: step(12 * 2)
+      }
+    },
+    山王长牙: [{
+      title: '满层时，元素战技与元素爆发伤害提升[eDmg]%',
+      refine: {
+        eDmg: step(10 * 6),
+        qDmg: step(10 * 6)
+      }
+    }],
+    撼地者: {
+      check: ({ element }) => [ '火' ].includes(element),
+      title: '触发火元素相关反应，元素战技造成的伤害提升[eDmg]%',
+      refine: {
+        eDmg: step(16)
+      }
+    },
+    硕果钩: {
+      title: '下落攻击的暴击率提升[a3Cpct]%普通攻击、重击、下落攻击造成的伤害提升[aDmg]%',
+      refine: {
+        a3Cpct: step(16),
+        aDmg: step(16),
+        a2Dmg: step(16),
+        a3Dmg: step(16)
+      }
+    },
+    焚曜千阳: {
+      title: '施放元素战技或元素爆发时，暴击伤害提高[cdmg]%，攻击力提升[atkPct]%',
+      data: {
+        cdmg: ({ params, refine }) => params.Nightsoul === true ? (step(20)[refine] * 1.75) : step(20)[refine],
+        atkPct: ({ params, refine }) => params.Nightsoul === true ? (step(28)[refine] * 1.75) : step(28)[refine]
       }
     }
   }

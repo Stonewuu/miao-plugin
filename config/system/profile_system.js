@@ -16,7 +16,7 @@ export const enkaApi = {
   url: 'https://enka.network/',
   userAgent: 'Miao-Plugin/3.1',
   listApi: ({ url, uid, diyCfg }) => {
-    return `${url}api/uid/${uid}/`
+    return `${url}api/uid/${uid}`
   }
 }
 
@@ -24,7 +24,7 @@ export const mggApi = {
   url: 'http://profile.microgg.cn/',
   userAgent: 'Miao-Plugin/3.1',
   listApi: ({ url, uid, diyCfg }) => {
-    return `${url}api/uid/${uid}/`
+    return `${url}api/uid/${uid}`
   }
 }
 
@@ -32,7 +32,7 @@ export const hutaoApi = {
   url: 'http://enka-api.hut.ao/',
   userAgent: 'Snap Hutao/miao',
   listApi: ({ url, uid, diyCfg }) => {
-    return `${url}/${uid}/`
+    return `${url}/${uid}`
   }
 }
 
@@ -41,6 +41,14 @@ export const homoApi = {
   // userAgent: 'Miao-Plugin/3.1',
   listApi: ({ url, uid, diyCfg }) => {
     return `${url}/${uid}`
+  }
+}
+
+// 米游社，仅用于占位，并不实际走这边的 url 请求
+export const mysPanelApi = {
+  url: '',
+  listApi: ({ url, uid, diyCfg }) => {
+    return ''
   }
 }
 
@@ -56,9 +64,18 @@ export const enkaHSRApi = {
   url: 'https://enka.network/',
   userAgent: 'Miao-Plugin/3.1',
   listApi: ({ url, uid, diyCfg }) => {
-    return `${url}api/hsr/uid/${uid}/`
+    return `${url}api/hsr/uid/${uid}`
   }
 }
+
+// 米游社星铁，仅用于占位，并不实际走这边的 url 请求
+export const mysPanelHSRApi = {
+  url: '',
+  listApi: ({ url, uid, diyCfg }) => {
+    return ''
+  }
+}
+
 export const requestInterval = 3
 
 export const isSys = true

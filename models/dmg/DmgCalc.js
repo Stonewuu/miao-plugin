@@ -39,12 +39,20 @@ let DmgCalc = {
 
     // 倍率独立乘区
     let multiNum = attr.multi / 100
+    let fyplus = attr.fyplus
 
     // 增伤区
     let dmgNum = (1 + dmg.base / 100 + dmg.plus / 100 + dynamicDmg / 100)
 
     if (ele === 'phy') {
       dmgNum = (1 + phy.base / 100 + phy.plus / 100 + dynamicPhy / 100)
+    }
+
+    if (/^scene,.*/.test(ele) || /.*,scene$/.test(ele) || ele === 'scene') {
+      dmgNum = 1
+       if (ele !== 'scene') {
+         ele = ele.replace(/(,)?scene(,)?/g, "")
+       }
     }
 
     // 易伤区
@@ -125,7 +133,7 @@ let DmgCalc = {
       cdmgNum = 0
     }
 
-    const isEle = ele !== false && ele !== 'phy'
+    const isEle = ele !== false && ele !== 'phy' && ele !== 'scene'
     // 反应区
     let eleNum = 1
     let eleBase = 1
@@ -182,7 +190,7 @@ let DmgCalc = {
       case 'burgeon':
       case 'hyperBloom': {
         eleBase *= eleBaseDmg[level]
-        ret = { avg: eleBase * eleNum * kNum }
+        ret = { avg: (eleBase + fyplus) * eleNum * kNum }
         break
       }
 

@@ -84,6 +84,21 @@ export default function (staticIdx, keyIdx) {
     梦应归于何处: [
       staticIdx(1, 'stance'),
       keyIdx('敌方受到装备者造成的击破伤害提高[breakEnemydmg]%', 'breakEnemydmg', 2)
+    ],
+    落日时起舞: [
+      staticIdx(1, 'cdmg'),
+      (tables) => {
+        return {
+          title: '2层Buff使追加攻击造成的伤害提高[tDmg]%',
+          data: {
+            tDmg: tables[2] * 2
+          }
+        }
+      }
+    ],
+    '忍事录•音律狩猎': [
+      staticIdx(1, 'hpPct'),
+      keyIdx('损失或回复自身生命值，暴击伤害提高[cdmg]%', 'cdmg', 2)
     ]
   }
 }

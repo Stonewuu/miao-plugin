@@ -312,5 +312,29 @@ export default {
         stance: 40
       }
     }]
+  },
+  奇想蕉乐园: {
+    2: [attr('cdmg', 16), {
+      title: '存在装备者召唤的目标时，暴击伤害额外提高[cdmg]%',
+      data: {
+        cdmg: 32
+      }
+    }]
+  },
+  沉陆海域露莎卡: {
+    2: attr('recharge', 5)
+  },
+  重循苦旅的司铎: {
+    2: attr('speedPct', 6)
+  },
+  识海迷坠的学者: {
+    2: attr('cpct', 8),
+    4: {
+      title: '终结技造成的伤害提高[qDmg]%，施放终结技后战技伤害提高[eDmg]%',
+      data: {
+        eDmg: 45,
+        qDmg: 20
+      }
+    }
   }
 }

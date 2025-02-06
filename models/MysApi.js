@@ -34,6 +34,9 @@ export default class MysApi {
     return new User({ id: this.e.user_id, uid: this.uid })
   }
 
+  /**
+   * @returns {Promise<MysApi>} 
+   */
   static async init (e, auth = 'all') {
     if (!e.runtime) {
       Version.runtime()
@@ -128,6 +131,11 @@ export default class MysApi {
   // 获取角色信息
   async getCharacter () {
     return await this.getData('character')
+  }
+
+  // 获取角色面板
+  async getCharacterDetail (character_ids) {
+    return await this.getData('characterDetail', { character_ids: character_ids })
   }
 
   // 获取角色详情
